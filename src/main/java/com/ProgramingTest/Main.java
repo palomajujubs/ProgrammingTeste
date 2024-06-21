@@ -6,11 +6,17 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import static java.lang.String.format;
+
+import static Domain.models.Pessoa.getFormatter;
+
 
 
 public class Main {
     public static void main(String[] args) {
+
+
+
+
         ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
 
         funcionarios.add(new Funcionario("Maria",
@@ -54,5 +60,18 @@ public class Main {
                 "Gerente", new BigDecimal("2799.93")));
 
         funcionarios.removeIf(funcionario -> funcionario.getNome().equals("João"));
+
+        for (int i = 0; i < funcionarios.size(); ++i){
+            Funcionario funcionario = funcionarios.get(i);
+
+             String nome = funcionario.getNome();
+             String dataNascimento = funcionario.getDataNascimento().format(getFormatter());
+             String funcao = funcionario.getFuncao();
+             BigDecimal salario = funcionario.getSalario();
+             BigDecimal salariaCal;
+            System.out.printf("Nome: %s, Data de nascimento: %s, Fnção : %s, Salario: %s%n",nome,dataNascimento, funcao, salario );
+
+        }
     }
+
 }
