@@ -1,10 +1,22 @@
 package Domain.models;
  import java.time.LocalDate;
+ import java.time.format.DateTimeFormatter;
 
 
 public class Pessoa {
     protected String nome;
     protected LocalDate dataNascimento;
+
+    protected static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public static DateTimeFormatter getFormatter() {
+        return formatter;
+    }
+
+    public static void setFormatter(DateTimeFormatter formatter) {
+        Pessoa.formatter = formatter;
+    }
+
 
 
     public Pessoa(String nome, LocalDate dataNascimento) {
