@@ -70,10 +70,11 @@ public class Main {
 
         imprimirTitulo("Imprimindo funcionários por função");
 
-        for (var funcao : conjuntoFuncionarios.keySet()) {
+        for (String funcao : conjuntoFuncionarios.keySet()) {
             List<Funcionario> listaFuncionarios = conjuntoFuncionarios.get(funcao);
 
             imprimirTitulo(funcao);
+
             listaFuncionarios(listaFuncionarios);
         }
         imprimirTitulo("Imprimindo funcionários que fazem aniversario no mês 10 e 12");
