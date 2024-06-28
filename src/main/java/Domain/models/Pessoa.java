@@ -7,14 +7,14 @@ public class Pessoa {
     protected String nome;
     protected LocalDate dataNascimento;
 
-    protected static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    protected static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    public static DateTimeFormatter getFormatter() {
-        return formatter;
+    public static DateTimeFormatter getDateTimeFormatter() {
+        return dateTimeFormatter;
     }
 
-    public static void setFormatter(DateTimeFormatter formatter) {
-        Pessoa.formatter = formatter;
+    public static void setDateTimeFormatter(DateTimeFormatter dateTimeFormatter) {
+        Pessoa.dateTimeFormatter = dateTimeFormatter;
     }
 
 
